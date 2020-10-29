@@ -1,0 +1,41 @@
+Step 1:
+var customConfigObject = {
+    buckets: [{
+            min: .05,
+            max: 9.95,
+            increment: .05
+        },
+        {
+            min: 10,
+            max: 19.8,
+            increment: .2
+        },
+        {
+            min: 20,
+            max: 29,
+            increment: 1
+        }
+    ]
+};
+
+changes to 
+
+var customConfigObject = {
+    buckets: [
+        {'min' : 0,'max' : 20,'increment' : 0.01 },
+        {'min' : 20.05,'max' : 29.95,'increment' : 0.05},
+        {'min' : 30,'max' : 39.90,'increment' : 0.1},
+        {'min' : 40,'max' : 50,'increment' : 0.5},
+        {'min' : 50,'max' : 99,'increment' : 1.0}
+    ]
+};
+
+---------
+
+Step 2:
+change the following in pbjs.setConfig()
+enableSendAllBids: !0,
+
+changes to
+
+enableSendAllBids: false,
